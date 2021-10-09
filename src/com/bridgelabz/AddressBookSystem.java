@@ -5,11 +5,9 @@ import java.util.Scanner;
 
 public class AddressBookSystem {
 
-
     ArrayList<Contacts> arrayDetails = new ArrayList<Contacts>();
     static Scanner sc = new Scanner(System.in);
-
-    /**
+    /*
      * This method is used to add details to address book
      */
     public void addDetails() {
@@ -37,6 +35,10 @@ public class AddressBookSystem {
     /**
      *This method is used to edit the details in address book
      */
+
+    public void display(){
+        System.out.println(arrayDetails);
+    }
 
     public void editDetails() {
         System.out.println("Confirm your first name to edit details: ");
@@ -107,12 +109,12 @@ public class AddressBookSystem {
         }
     }
 
-
     public static void main(String[] args) {
         AddressBookSystem details = new AddressBookSystem();
-        details.addDetails();
-        int i = 0;
-        while (i == 0) {
+        int  input;
+        int ans;
+        Scanner scanner = new Scanner(System.in);
+        do {
             System.out.println("Welcome to Address Book Program");
             System.out.println("What do you want to do: ");
             System.out.println("1.Add details.\n2.Edit details.\n3.Delete Details.");
@@ -128,10 +130,11 @@ public class AddressBookSystem {
                     details.deleteDetails();
                     break;
                 default:
-                    i = 1;
-                    System.out.println("Wrong option");
+                    System.out.println("Invalid! option");
                     break;
             }
-        }
+            System.out.println("Do you want to continue?(0/1)");
+            ans=scanner.nextInt();
+        }while(ans==1);
     }
 }
