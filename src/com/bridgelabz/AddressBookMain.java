@@ -1,15 +1,15 @@
 package com.bridgelabz;
 import java.util.*;
 
-public class AddressBookMain{
+public class AddressBookMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
-        Map<String, AddressBook> addressBookMap = new HashMap<String, AddressBook>();
+        Map<String, AddressBook> addressBookMap = new HashMap<>();
 
         while (true) {
             System.out.println("\nWelcome to Address Book System");
-            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5.View Contact Data \n6.Count Contacts \n7. Exit");
+            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5. View Contact Data \n6. Count Contacts \n7. Exit");
             System.out.print("Enter Your choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
@@ -18,7 +18,8 @@ public class AddressBookMain{
                     System.out.println("Enter Name of new Address Book: ");
                     String bookName = sc.next();
                     sc.nextLine();
-                    addressBookMap.put(bookName, new AddressBook());// adding bookname as a key and vlue is allocating
+                    addressBookMap.put(bookName, new AddressBook());
+                    // adding bookname as a key and vlue is allocating
                     // memory for addressbook obj
                     AddressBook.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
                     // passing key of hashmap
